@@ -71,4 +71,20 @@ The problem is that after doing the respose in after firing the handler the app 
 
 
 # Middleware Package:
-Morgan
+Morgan makes everything for us.  
+app.use(morgan("dev"));
+app.use(morgan("tini"));
+
+
+# static files:
+you can't link the css to the Html files. 
+Try to create styles.css
+try to open it /afafa/styles.css
+The server will protect it!
+you can see that in the network section in the devtools in chrome!
+To specify the files that should be protected by a server and which not you need a framework. 
+"Middleware and static files"
+
+app.use(express.static("public"));
+
+create a folder public and put the files init wich you wanna access. ;)

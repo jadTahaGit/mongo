@@ -1,25 +1,15 @@
 const express = require("express");
 const app = express();
+const morgan = require("morgan");
+
 
 app.set("view engine", "ejs");
 
 app.listen(3000);
 
-
-//Middleware
-app.use((req, res, next) => {
-    console.log("new request made:");
-    console.log("host: ", req.hostname);
-    console.log("path: ", req.path);
-    console.log("method: ", req.method);
-    next();  //to the next middleware
-})
-
-
-app.use((req, res, next) =>{
-    console.log("in the next middleware");
-    next();
-})
+//Middleware & static files:
+app.use(express.static("public"));
+app.use(morgan("dev"));
 
 app.get("/", (req,res)=> {
     const blogs = [
