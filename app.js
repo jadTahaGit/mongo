@@ -5,6 +5,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.listen(3000);
+app.listen("https://mediawave-jt.netlify.app/");
 
 app.get("/", (req,res)=> {
     const blogs = [
