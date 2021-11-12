@@ -70,7 +70,7 @@ The problem is that after doing the respose in after firing the handler the app 
 
 
 
-# Middleware Package:
+# Middleware Package Morgan:
 Morgan makes everything for us.  
 app.use(morgan("dev"));
 app.use(morgan("tini"));
@@ -88,3 +88,54 @@ To specify the files that should be protected by a server and which not you need
 app.use(express.static("public"));
 
 create a folder public and put the files init wich you wanna access. ;)
+
+
+
+
+# Mongoose 
+is an ODM library - Object Document Mapping library
+  
+  
+             
+           |------- User Model: User.get(), User.findByID() 
+Mongoose --|
+           |------- Blog Model: Blog.deleteOne()
+
+
+# Schemas
+defines the structure of a type of data/document
+
+we have 2 types of schemas:
+
+1- User schema:
+name(string), required
+age(number)
+bio (string), required
+
+2- Blog Schema:
+title (string), required
+Snippet(string), required
+body (string), required
+
+# Models
+allows us to communicate with database collections
+
+example:
+
+    Blog Model
+|---------------| get, save, delete, etc.
+|   Blog Schema |--------------------------> |Database Blog 
+|---------------|                              Collection
+
+
+
+
+
+
+# Save Data && Get data form/to Database
+1. see the folder models and what written there. It's really nice.
+2. make a new blog and save it to the database blog.save()
+3.  get blog from database blog.Find() and blog.findbyID()
+4. then res.send(result) & catch the error if there is any.
+
+
